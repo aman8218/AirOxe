@@ -13,11 +13,23 @@ export default function sitemap(): MetadataRoute.Sitemap {
       lastModified: new Date(),
     },
     {
-      url: `${baseUrl}/products/airoxe-airshield`,
+      url: `${baseUrl}/products/airoxe-airshield-black`,
       lastModified: new Date(),
     },
     {
-      url: `${baseUrl}/products/active-mask`,
+      url: `${baseUrl}products/airoxe-airshield-red`,
+      lastModified: new Date(),
+    },
+    {
+      url: `${baseUrl}products/airoxe-airshield-gray`,
+      lastModified: new Date(),
+    },
+    {
+      url: `${baseUrl}products/airoxe-airshield-white`,
+      lastModified: new Date(),
+    },
+    {
+      url: `${baseUrl}products/airoxe-airshield-pink`,
       lastModified: new Date(),
     },
     {
