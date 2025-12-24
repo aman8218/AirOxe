@@ -1,32 +1,24 @@
 import mongoose from 'mongoose';
 
-const MONGODB_URI =
-  process.env.MONGODB_URI || 'mongodb://localhost:27017/airoxe';
+const MONGODB_URI = process.env.MONGODB_URI;
 
-let isConnected = false;
+if (!MONGODB_URI) {
+  throw new Error('❌ MONGODB_URI is not defined');
+}
 
 export const connectDatabase = async (): Promise<void> => {
-  if (isConnected) {
+  // 0 = disconnected, 1 = connected, 2 = connecting, 3 = disconnecting
+  if (mongoose.connection.readyState === 1) {
     return;
   }
 
   try {
     await mongoose.connect(MONGODB_URI);
-    isConnected = true;
 
-    console.log('✅ MongoDB connected successfully');
-
-    mongoose.connection.on('error', (err) => {
-      console.error('❌ MongoDB connection error:', err);
-    });
-
-    mongoose.connection.on('disconnected', () => {
-      console.warn('⚠️ MongoDB disconnected');
-      isConnected = false;
-    });
+    console.log('✅ MongoDB connected');
 
   } catch (error) {
-    console.error('❌ Database connection failed:', error);
-    process.exit(1);
+    console.error('❌ MongoDB connection error:', error);
+    throw error; // Let Vercel handle retries
   }
 };
