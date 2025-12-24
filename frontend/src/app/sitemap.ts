@@ -17,19 +17,19 @@ export default function sitemap(): MetadataRoute.Sitemap {
       lastModified: new Date(),
     },
     {
-      url: `${baseUrl}products/airoxe-airshield-red`,
+      url: `${baseUrl}/products/airoxe-airshield-red`,
       lastModified: new Date(),
     },
     {
-      url: `${baseUrl}products/airoxe-airshield-gray`,
+      url: `${baseUrl}/products/airoxe-airshield-gray`,
       lastModified: new Date(),
     },
     {
-      url: `${baseUrl}products/airoxe-airshield-white`,
+      url: `${baseUrl}/products/airoxe-airshield-white`,
       lastModified: new Date(),
     },
     {
-      url: `${baseUrl}products/airoxe-airshield-pink`,
+      url: `${baseUrl}/products/airoxe-airshield-pink`,
       lastModified: new Date(),
     },
     {
