@@ -6,7 +6,7 @@ import axios from 'axios';
 
 const API_URL = process.env.NEXT_PUBLIC_API_URL;
 
-export const authOptions: NextAuthOptions = {
+const authOptions: NextAuthOptions = {  // Remove 'export' from here
   providers: [
     GoogleProvider({
       clientId: process.env.GOOGLE_CLIENT_ID!,
@@ -26,13 +26,13 @@ export const authOptions: NextAuthOptions = {
         if (!credentials?.email || !credentials?.password) {
           return null;
         }
-
         try {
+          // FIX: Changed from axios.post`...` to axios.post('...')
           const response = await axios.post(`${API_URL}/auth/login`, {
             email: credentials.email,
             password: credentials.password,
           });
-
+          
           if (response.data.success) {
             return {
               id: response.data.data.user.id,
@@ -54,13 +54,14 @@ export const authOptions: NextAuthOptions = {
       // Handle OAuth sign in
       if (account?.provider === 'google' || account?.provider === 'github') {
         try {
+          // FIX: Changed from axios.post`...` to axios.post('...')
           const response = await axios.post(`${API_URL}/auth/oauth`, {
             provider: account.provider,
             email: user.email,
             name: user.name,
             image: user.image,
           });
-
+          
           if (response.data.success) {
             // Store token in user object
             user.token = response.data.data.token;
@@ -104,5 +105,4 @@ export const authOptions: NextAuthOptions = {
 };
 
 const handler = NextAuth(authOptions);
-
 export { handler as GET, handler as POST };
