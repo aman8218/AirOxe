@@ -7,7 +7,7 @@ import SessionProvider from '@/components/SessionProvider';
 export const metadata = {
   title: "AirOxe | Clean Air. Smart Living.",
   description:
-    "Learn about AirOxe, an Indian clean-air lifestyle brand building premium reusable anti-pollution masks and future air-purification solutions for urban living.",
+    "AirOxe offers premium reusable anti-pollution masks designed for Indian cities. Built for comfort, breathability, and everyday protection from urban air pollution.",
   keywords: [
     "AirOxe",
     "about AirOxe",
