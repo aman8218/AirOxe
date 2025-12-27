@@ -42,7 +42,7 @@ icons: {
     siteName: "AirOxe",
     images: [
       {
-        url: "https://airoxe.in/og-about.jpg",
+        url: "https://www.airoxe.in/images/AirOxeLogo.png",
         width: 1200,
         height: 630,
         alt: "About AirOxe"
