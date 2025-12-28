@@ -4,6 +4,31 @@ import Link from 'next/link';
 import { Calendar, Clock, ArrowLeft, Share2 } from 'lucide-react';
 import Navbar from '@/components/Navbar';
 import Footer from '@/components/Footer';
+import type { Metadata } from 'next';
+
+export const metadata: Metadata = {
+  title: 'Best Mask for Delhi Air Pollution (2026 Guide) | AirOxe',
+  description:
+    "Looking for the best mask for Delhi air pollution? Learn how to choose the right pollution mask for daily use in high AQI Indian cities.",
+  keywords: [
+    'best mask for delhi air pollution',
+    'delhi pollution mask',
+    'air pollution mask india',
+    'anti pollution mask india',
+    'reusable pollution mask',
+    'n95 mask for pollution',
+    'pollution mask for daily use',
+    'pollution mask for bike riders',
+    'mask for delhi ncr pollution',
+    'pm2.5 pollution mask',
+    'urban air pollution mask',
+    'anti pollution mask for commuting',
+    'best pollution mask india',
+    'mask for high aqi cities',
+    'delhi smog mask',
+  ],
+};
+
 
 export default function DelhiPollutionBlog() {
   return (
@@ -27,7 +52,7 @@ export default function DelhiPollutionBlog() {
 
         {/* Title */}
         <h1 className="text-4xl md:text-5xl font-bold text-gray-900 mb-6 leading-tight">
-          Best Mask for Delhi Air Pollution (2026 Guide) | AirOxe
+          Best Mask for Delhi Air Pollution (2026 Guide)
         </h1>
 
         {/* Meta Info */}
@@ -48,7 +73,9 @@ export default function DelhiPollutionBlog() {
           <p className="text-xl text-gray-700 leading-relaxed mb-8">
             Every winter, millions of Delhi residents wake up to a thick blanket of smog covering the city. The Air Quality Index (AQI) regularly crosses 400—a level considered "severe" and dangerous for everyone, not just those with existing health conditions. If you're a daily commuter, parent, or office worker in Delhi-NCR, you've probably wondered: <strong>what's the best mask for Delhi air pollution?</strong>
           </p>
-          <img src="/images/delhi-pollution.png" alt="Best Mask for Delhi Air Pollution in 2026" />
+          <img src="/images/delhi-pollution.png" alt="Best Mask for Delhi Air Pollution in 2026" width={800}
+            height={450}
+            className="rounded-lg" />
           <p className="text-gray-700 leading-relaxed mb-8">
             The truth is, not all masks work. Cheap cloth masks, surgical masks, and basic face coverings offer little to no protection against PM2.5 particles—the tiny pollutants that penetrate deep into your lungs. This guide will help you understand what makes a good pollution mask, why reusable options are gaining popularity, and how to choose one that actually protects your health.
           </p>

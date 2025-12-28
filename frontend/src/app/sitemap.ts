@@ -52,5 +52,9 @@ export default function sitemap(): MetadataRoute.Sitemap {
       url: `${baseUrl}/refund`,
       lastModified: new Date(),
     },
+    {
+      url: `${baseUrl}/blog/best-mask-for-delhi-pollution-2026`,
+      lastModified: new Date(),
+    },
   ];
 }
