@@ -13,7 +13,7 @@ const productSchema = new Schema<IProductDocument>(
     slug: {
       type: String,
       required: true,
-      unique: true,
+      unique: true,  // This already creates an index
       lowercase: true,
     },
     description: {
@@ -82,7 +82,7 @@ const productSchema = new Schema<IProductDocument>(
 );
 
 // Index for search and filtering
-productSchema.index({ slug: 1 });
+// productSchema.index({ slug: 1 });  ← REMOVE THIS LINE (duplicate!)
 productSchema.index({ status: 1 });
 productSchema.index({ category: 1 });
 productSchema.index({ name: 'text', description: 'text' });

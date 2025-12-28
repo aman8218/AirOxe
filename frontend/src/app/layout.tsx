@@ -54,6 +54,7 @@ icons: {
     index: true,
     follow: true
   }
+
 };
 
 

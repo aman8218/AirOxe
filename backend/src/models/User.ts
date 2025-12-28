@@ -13,7 +13,7 @@ const userSchema = new Schema<IUserDocument>(
     email: {
       type: String,
       required: [true, 'Email is required'],
-      unique: true,
+      unique: true,  // This already creates an index
       lowercase: true,
       trim: true,
       match: [/^\S+@\S+\.\S+$/, 'Please provide a valid email'],
@@ -52,7 +52,7 @@ const userSchema = new Schema<IUserDocument>(
   }
 );
 
-// Index for faster email lookups
-userSchema.index({ email: 1 });
+// Remove this line - it's creating a duplicate index!
+// userSchema.index({ email: 1 });
 
 export const User = mongoose.model<IUserDocument>('User', userSchema);
