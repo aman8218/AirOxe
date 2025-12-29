@@ -201,6 +201,10 @@ export default function DelhiPollutionBlog() {
             For most Delhi residents, a <strong>reusable pollution mask</strong> makes more sense—both financially and environmentally. Brands like AirOxe are now offering premium reusable masks designed specifically for Indian cities, with multi-layer filtration, comfortable fits, and modern designs that don't look clinical.
           </p>
 
+          <img src="/images/anti-pollution-mask-reusable.png" alt="reusable anti pollution mask" width={800}
+            
+            className="rounded-lg"/>
+
           <div className="bg-blue-600 text-white p-8 rounded-xl my-12 text-center">
             <h3 className="text-2xl font-bold mb-4">
               Looking for a Reliable Delhi Pollution Mask?
