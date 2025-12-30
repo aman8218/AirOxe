@@ -83,7 +83,7 @@ export default function CartPage() {
         <div className="max-w-7xl mx-auto px-4 py-12">
           <h1 className="text-4xl font-bold text-gray-900 mb-8">Shopping Cart</h1>
 
-          <div className="grid lg:grid-cols-3 gap-8">
+          <div className="grid lg:grid-cols-3 gap-8 px-0">
             <div className="lg:col-span-2 space-y-4">
               {cart.map(item => (
                 <div key={item.productId} className="bg-white rounded-xl p-6 shadow-md">

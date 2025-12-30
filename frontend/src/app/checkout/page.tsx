@@ -225,7 +225,7 @@ function CheckoutContent() {
 
           <div className="grid lg:grid-cols-3 gap-8">
             <div className="lg:col-span-2">
-              <div className="bg-white rounded-xl p-8 shadow-md">
+              <div className="bg-white rounded-xl p-8 shadow-md px-0">
                 <h2 className="text-2xl font-bold text-gray-900 mb-6">Shipping Information</h2>
 
                 <div className="space-y-6">
@@ -307,7 +307,7 @@ function CheckoutContent() {
                 </div>
               </div>
 
-              <div className="bg-white rounded-xl p-8 shadow-md mt-6">
+              <div className="bg-white rounded-xl p-8 shadow-md mt-6 px-0">
                 <h2 className="text-2xl font-bold text-gray-900 mb-4">Payment Method</h2>
                 <div className="space-y-3">
                   <div
@@ -354,7 +354,7 @@ function CheckoutContent() {
               </div>
             </div>
 
-            <div className="lg:col-span-1">
+            <div className="lg:col-span-1 px-0">
               <div className="bg-white rounded-xl p-6 shadow-md sticky top-20">
                 <h2 className="text-2xl font-bold text-gray-900 mb-6">Order Summary</h2>
 
