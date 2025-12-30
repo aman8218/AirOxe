@@ -181,7 +181,7 @@ function CheckoutContent() {
     <div className="min-h-screen bg-gradient-to-b from-blue-50 via-white to-purple-50 overflow-x-hidden">
       <Navbar />
       <div className="bg-gradient-to-b from-blue-50 to-white">
-        <div className="max-w-7xl mx-auto px-4 py-8 md:py-12">
+        <div className="max-w-7xl mx-auto px-1 py-8 md:py-12">
           {/* Progress Bar */}
           <div className="mb-8 md:mb-12 px-2">
             <div className="flex items-center justify-between max-w-3xl mx-auto">

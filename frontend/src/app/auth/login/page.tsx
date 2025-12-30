@@ -29,7 +29,18 @@ export default function LoginPage() {
       const { data } = await api.post('/auth/login', formData);
       login(data.data.user, data.data.token);
       toast.success('Login successful!');
+
+      const redirectPath = sessionStorage.getItem('redirectAfterLogin');
+    
+    if (redirectPath) {
+      // Clear the saved path
+      sessionStorage.removeItem('redirectAfterLogin');
+      // Redirect to the saved path
+      router.push(redirectPath);
+    } else {
+      // Default redirect to home
       router.push('/');
+    }
     } catch (error: any) {
       toast.error(error.response?.data?.message || 'Login failed');
     } finally {

@@ -12,6 +12,7 @@ export default function ProtectedRoute({ children }: { children: React.ReactNode
   useEffect(() => {
     if (!isLoading && !user) {
       router.push('/auth/login');
+      sessionStorage.setItem('redirectAfterLogin', window.location.pathname);
     }
   }, [user, isLoading, router]);
 
