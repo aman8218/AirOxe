@@ -55,32 +55,36 @@ export default function CartPage() {
 
   if (cart.length === 0) {
     return (
-      <>
-      <Navbar/>
-      <div className="min-h-screen bg-gradient-to-b from-blue-50 to-white">
-        <div className="max-w-7xl mx-auto px-4 py-20">
-          <div className="text-center space-y-6">
-            <ShoppingBag className="w-24 h-24 mx-auto text-gray-300" />
-            <h1 className="text-3xl font-bold text-gray-900">Your Cart is Empty</h1>
-            <p className="text-gray-600">Start shopping to add items to your cart</p>
-            <Link
-              href="/products"
-              className="inline-block px-8 py-3 bg-gradient-to-r from-blue-500 to-purple-500 text-white rounded-lg font-semibold hover:shadow-lg transition"
-            >
-              Browse Products
-            </Link>
+      <div className="min-h-screen bg-gradient-to-b from-blue-50 via-white to-purple-50">
+        <div className="overflow-x-hidden">
+          <Navbar/>
+        </div>
+        <div className="bg-gradient-to-b from-blue-50 to-white">
+          <div className="max-w-7xl mx-auto px-4 py-20">
+            <div className="text-center space-y-6">
+              <ShoppingBag className="w-24 h-24 mx-auto text-gray-300" />
+              <h1 className="text-3xl font-bold text-gray-900">Your Cart is Empty</h1>
+              <p className="text-gray-600">Start shopping to add items to your cart</p>
+              <Link
+                href="/products"
+                className="inline-block px-8 py-3 bg-gradient-to-r from-blue-500 to-purple-500 text-white rounded-lg font-semibold hover:shadow-lg transition"
+              >
+                Browse Products
+              </Link>
+            </div>
           </div>
         </div>
       </div>
-      </>
     );
   }
 
   return (
-    <>
-    <Navbar/>
-    <div className="min-h-screen bg-gradient-to-b from-blue-50 to-white">
-      <div className="max-w-7xl mx-auto px-4 py-12">
+    <div className="min-h-screen bg-gradient-to-b from-blue-50 via-white to-purple-50">
+      {/* <div className="overflow-x-hidden"> */}
+        <Navbar/>
+      {/* </div> */}
+      <div className="bg-gradient-to-b from-blue-50 to-white">
+        <div className="max-w-7xl mx-auto px-4 py-12">
         <h1 className="text-4xl font-bold text-gray-900 mb-8">Shopping Cart</h1>
 
         <div className="grid lg:grid-cols-3 gap-8">
@@ -193,6 +197,6 @@ export default function CartPage() {
         </div>
       </div>
     </div>
-    </>
+    </div>
   );
 }

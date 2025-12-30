@@ -178,9 +178,11 @@ function CheckoutContent() {
   ];
 
   return (
-    <>
-      <Navbar />
-      <div className="min-h-screen bg-gradient-to-b from-blue-50 to-white">
+    <div className="min-h-screen bg-gradient-to-b from-blue-50 via-white to-purple-50">
+      {/* <div className="overflow-x-hidden"> */}
+        <Navbar />
+      {/* </div> */}
+      <div className="bg-gradient-to-b from-blue-50 to-white">
         <div className="max-w-7xl mx-auto px-4 py-12">
           {/* Progress Bar */}
           <div className="mb-12">
@@ -443,7 +445,7 @@ function CheckoutContent() {
           </div>
         </div>
       </div>
-    </>
+    </div>
   );
 }
 
