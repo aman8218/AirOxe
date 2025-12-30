@@ -178,12 +178,10 @@ function CheckoutContent() {
   ];
 
   return (
-    <div className="min-h-screen bg-gradient-to-b from-blue-50 via-white to-purple-50">
-      <div className="overflow-x-hidden">
-        <Navbar />
-      </div>
+    <div className="min-h-screen bg-gradient-to-b from-blue-50 via-white to-purple-50 overflow-x-hidden">
+      <Navbar />
       <div className="bg-gradient-to-b from-blue-50 to-white">
-        <div className="max-w-7xl mx-auto px-4 py-12">
+        <div className="max-w-7xl mx-auto px-4 py-8 md:py-12">
           {/* Progress Bar */}
           <div className="mb-8 md:mb-12 px-2">
             <div className="flex items-center justify-between max-w-3xl mx-auto">
@@ -388,16 +386,6 @@ function CheckoutContent() {
                 </div>
 
                 <div className="border-t pt-4 space-y-2 mb-6">
-                  {/* <div className="flex justify-between text-gray-600">
-                    <span>MRP Total</span>
-                    <span>₹{799 *}</span>
-                  </div>
-                  {savings > 0 && (
-                    <div className="flex justify-between text-green-600 font-semibold">
-                      <span>Discount</span>
-                      <span>-₹{savings.toLocaleString()}</span>
-                    </div>
-                  )} */}
                   <div className="flex justify-between text-gray-600">
                     <span>Subtotal</span>
                     <span>₹{subtotal.toLocaleString()}</span>
@@ -412,12 +400,6 @@ function CheckoutContent() {
                       <span className="text-orange-600">₹{codCharges}</span>
                     </div>
                   )}
-                  {/* {savings > 0 && (
-                    <div className="flex justify-between text-sm bg-green-50 -mx-2 px-2 py-2 rounded">
-                      <span className="text-green-700 font-medium">Total Savings</span>
-                      <span className="text-green-700 font-bold">₹{savings.toLocaleString()}</span>
-                    </div>
-                  )} */}
                   <div className="border-t pt-3 mt-3">
                     <div className="flex justify-between text-xl font-bold text-gray-900">
                       <span>Total</span>
