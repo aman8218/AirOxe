@@ -179,19 +179,19 @@ function CheckoutContent() {
 
   return (
     <div className="min-h-screen bg-gradient-to-b from-blue-50 via-white to-purple-50">
-      {/* <div className="overflow-x-hidden"> */}
+      <div className="overflow-x-hidden">
         <Navbar />
-      {/* </div> */}
+      </div>
       <div className="bg-gradient-to-b from-blue-50 to-white">
         <div className="max-w-7xl mx-auto px-4 py-12">
           {/* Progress Bar */}
-          <div className="mb-12">
+          <div className="mb-8 md:mb-12 px-2">
             <div className="flex items-center justify-between max-w-3xl mx-auto">
               {steps.map((step, index) => (
                 <div key={index} className="flex items-center flex-1">
                   <div className="flex flex-col items-center relative">
                     <div
-                      className={`w-12 h-12 rounded-full flex items-center justify-center transition-all ${
+                      className={`w-10 h-10 md:w-12 md:h-12 rounded-full flex items-center justify-center transition-all ${
                         step.status === 'completed'
                           ? 'bg-green-500 text-white'
                           : step.status === 'current'
@@ -199,10 +199,10 @@ function CheckoutContent() {
                           : 'bg-gray-200 text-gray-400'
                       }`}
                     >
-                      <step.icon className="w-6 h-6" />
+                      <step.icon className="w-4 h-4 md:w-6 md:h-6" />
                     </div>
                     <span
-                      className={`text-xs font-medium mt-2 whitespace-nowrap ${
+                      className={`text-[10px] md:text-xs font-medium mt-1 md:mt-2 whitespace-nowrap ${
                         step.status === 'completed' || step.status === 'current'
                           ? 'text-gray-900'
                           : 'text-gray-400'
@@ -213,7 +213,7 @@ function CheckoutContent() {
                   </div>
                   {index < steps.length - 1 && (
                     <div
-                      className={`flex-1 h-1 mx-4 transition-all ${
+                      className={`flex-1 h-1 mx-1 md:mx-4 transition-all ${
                         step.status === 'completed' ? 'bg-green-500' : 'bg-gray-200'
                       }`}
                     />
