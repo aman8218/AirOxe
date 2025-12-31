@@ -100,174 +100,176 @@ function ProfileContent() {
     <>
       <Navbar />
 
-      <div className="min-h-screen bg-gradient-to-b from-blue-50 to-white">
-        <div className="max-w-4xl mx-auto px-4 py-12">
-          <h1 className="text-4xl font-bold text-gray-900 mb-8">My Profile</h1>
+      <div className="min-h-screen bg-gradient-to-b from-blue-50 to-white overflow-x-hidden">
+        <div className="max-w-4xl mx-auto px-0 lg:px-4 py-8 md:py-12">
+          <h1 className="text-2xl md:text-4xl font-bold text-gray-900 mb-6 md:mb-8 px-4 lg:px-0">My Profile</h1>
 
-          <div className="bg-white rounded-xl p-8 shadow-md">
-            {/* Profile Header */}
-            <div className="flex items-center space-x-4 mb-8 pb-8 border-b">
-              <div className="w-20 h-20 rounded-full bg-gradient-to-br from-blue-500 to-purple-500 flex items-center justify-center text-white text-2xl font-bold">
-                {user?.fullName?.charAt(0).toUpperCase()}
+          <div className="bg-white rounded-xl shadow-md mx-4 lg:mx-0">
+            <div className="p-4 md:p-6 lg:p-8">
+              {/* Profile Header */}
+              <div className="flex items-center space-x-3 md:space-x-4 mb-6 md:mb-8 pb-6 md:pb-8 border-b">
+                <div className="w-16 h-16 md:w-20 md:h-20 rounded-full bg-gradient-to-br from-blue-500 to-purple-500 flex items-center justify-center text-white text-xl md:text-2xl font-bold flex-shrink-0 shadow-lg">
+                  {user?.fullName?.charAt(0).toUpperCase()}
+                </div>
+                <div className="min-w-0 flex-1">
+                  <h2 className="text-lg md:text-2xl font-bold text-gray-900 truncate">
+                    {user?.fullName}
+                  </h2>
+                  <p className="text-sm md:text-base text-gray-600 truncate">{user?.email}</p>
+                  <span className="inline-block mt-1 px-2 md:px-3 py-0.5 md:py-1 bg-blue-100 text-blue-700 text-xs md:text-sm rounded-full">
+                    {user?.role === 'admin' ? 'Admin' : 'Customer'}
+                  </span>
+                </div>
               </div>
-              <div>
-                <h2 className="text-2xl font-bold text-gray-900">
-                  {user?.fullName}
-                </h2>
-                <p className="text-gray-600">{user?.email}</p>
-                <span className="inline-block mt-1 px-3 py-1 bg-blue-100 text-blue-700 text-sm rounded-full">
-                  {user?.role === 'admin' ? 'Admin' : 'Customer'}
-                </span>
-              </div>
+
+              {/* Form */}
+              <form onSubmit={handleSubmit} className="space-y-5 md:space-y-6">
+                <div className="grid md:grid-cols-2 gap-4 md:gap-6">
+                  <div>
+                    <label className="block text-sm font-medium mb-2">
+                      Full Name *
+                    </label>
+                    <div className="relative">
+                      <User className="absolute left-3 top-1/2 -translate-y-1/2 w-5 h-5 text-gray-400" />
+                      <input
+                        type="text"
+                        value={formData.fullName}
+                        onChange={(e) =>
+                          setFormData({ ...formData, fullName: e.target.value })
+                        }
+                        className="w-full pl-10 pr-4 py-2.5 md:py-3 border rounded-lg focus:ring-2 focus:ring-blue-500 text-sm md:text-base"
+                        required
+                      />
+                    </div>
+                  </div>
+
+                  <div>
+                    <label className="block text-sm font-medium mb-2">
+                      Phone Number
+                    </label>
+                    <div className="relative">
+                      <Phone className="absolute left-3 top-1/2 -translate-y-1/2 w-5 h-5 text-gray-400" />
+                      <input
+                        type="tel"
+                        value={formData.phone}
+                        onChange={(e) =>
+                          setFormData({ ...formData, phone: e.target.value })
+                        }
+                        className="w-full pl-10 pr-4 py-2.5 md:py-3 border rounded-lg focus:ring-2 focus:ring-blue-500 text-sm md:text-base"
+                      />
+                    </div>
+                  </div>
+                </div>
+
+                {/* Address */}
+                <div className="border-t pt-5 md:pt-6">
+                  <div className="flex items-center space-x-2 mb-4">
+                    <MapPin className="w-5 h-5 text-gray-600" />
+                    <h3 className="text-base md:text-lg font-semibold">
+                      Address Information
+                    </h3>
+                  </div>
+
+                  <div className="space-y-4">
+                    <input
+                      type="text"
+                      placeholder="Street Address"
+                      value={formData.address.street}
+                      onChange={(e) =>
+                        setFormData({
+                          ...formData,
+                          address: {
+                            ...formData.address,
+                            street: e.target.value,
+                          },
+                        })
+                      }
+                      className="w-full px-4 py-2.5 md:py-3 border rounded-lg focus:ring-2 focus:ring-blue-500 text-sm md:text-base"
+                    />
+
+                    <div className="grid md:grid-cols-2 gap-4">
+                      <input
+                        type="text"
+                        placeholder="City"
+                        value={formData.address.city}
+                        onChange={(e) =>
+                          setFormData({
+                            ...formData,
+                            address: {
+                              ...formData.address,
+                              city: e.target.value,
+                            },
+                          })
+                        }
+                        className="w-full px-4 py-2.5 md:py-3 border rounded-lg focus:ring-2 focus:ring-blue-500 text-sm md:text-base"
+                      />
+
+                      <input
+                        type="text"
+                        placeholder="State"
+                        value={formData.address.state}
+                        onChange={(e) =>
+                          setFormData({
+                            ...formData,
+                            address: {
+                              ...formData.address,
+                              state: e.target.value,
+                            },
+                          })
+                        }
+                        className="w-full px-4 py-2.5 md:py-3 border rounded-lg focus:ring-2 focus:ring-blue-500 text-sm md:text-base"
+                      />
+                    </div>
+
+                    <div className="grid md:grid-cols-2 gap-4">
+                      <input
+                        type="text"
+                        placeholder="PIN Code"
+                        maxLength={6}
+                        value={formData.address.pin}
+                        onChange={(e) =>
+                          setFormData({
+                            ...formData,
+                            address: {
+                              ...formData.address,
+                              pin: e.target.value,
+                            },
+                          })
+                        }
+                        className="w-full px-4 py-2.5 md:py-3 border rounded-lg focus:ring-2 focus:ring-blue-500 text-sm md:text-base"
+                      />
+
+                      <input
+                        type="text"
+                        placeholder="Landmark"
+                        value={formData.address.landmark}
+                        onChange={(e) =>
+                          setFormData({
+                            ...formData,
+                            address: {
+                              ...formData.address,
+                              landmark: e.target.value,
+                            },
+                          })
+                        }
+                        className="w-full px-4 py-2.5 md:py-3 border rounded-lg focus:ring-2 focus:ring-blue-500 text-sm md:text-base"
+                      />
+                    </div>
+                  </div>
+                </div>
+
+                <div className="flex justify-end pt-5 md:pt-6 border-t">
+                  <button
+                    type="submit"
+                    disabled={loading}
+                    className="w-full md:w-auto px-6 md:px-8 py-2.5 md:py-3 bg-gradient-to-r from-blue-500 to-purple-500 text-white rounded-lg font-semibold flex items-center justify-center gap-2 disabled:opacity-50 text-sm md:text-base"
+                  >
+                    {loading && <Loader2 className="w-4 h-4 md:w-5 md:h-5 animate-spin" />}
+                    Save Changes
+                  </button>
+                </div>
+              </form>
             </div>
-
-            {/* Form */}
-            <form onSubmit={handleSubmit} className="space-y-6">
-              <div className="grid md:grid-cols-2 gap-6">
-                <div>
-                  <label className="block text-sm font-medium mb-2">
-                    Full Name *
-                  </label>
-                  <div className="relative">
-                    <User className="absolute left-3 top-1/2 -translate-y-1/2 w-5 h-5 text-gray-400" />
-                    <input
-                      type="text"
-                      value={formData.fullName}
-                      onChange={(e) =>
-                        setFormData({ ...formData, fullName: e.target.value })
-                      }
-                      className="w-full pl-10 pr-4 py-3 border rounded-lg focus:ring-2 focus:ring-blue-500"
-                      required
-                    />
-                  </div>
-                </div>
-
-                <div>
-                  <label className="block text-sm font-medium mb-2">
-                    Phone Number
-                  </label>
-                  <div className="relative">
-                    <Phone className="absolute left-3 top-1/2 -translate-y-1/2 w-5 h-5 text-gray-400" />
-                    <input
-                      type="tel"
-                      value={formData.phone}
-                      onChange={(e) =>
-                        setFormData({ ...formData, phone: e.target.value })
-                      }
-                      className="w-full pl-10 pr-4 py-3 border rounded-lg focus:ring-2 focus:ring-blue-500"
-                    />
-                  </div>
-                </div>
-              </div>
-
-              {/* Address */}
-              <div className="border-t pt-6">
-                <div className="flex items-center space-x-2 mb-4">
-                  <MapPin className="w-5 h-5 text-gray-600" />
-                  <h3 className="text-lg font-semibold">
-                    Address Information
-                  </h3>
-                </div>
-
-                <div className="space-y-4">
-                  <input
-                    type="text"
-                    placeholder="Street Address"
-                    value={formData.address.street}
-                    onChange={(e) =>
-                      setFormData({
-                        ...formData,
-                        address: {
-                          ...formData.address,
-                          street: e.target.value,
-                        },
-                      })
-                    }
-                    className="w-full px-4 py-3 border rounded-lg focus:ring-2 focus:ring-blue-500"
-                  />
-
-                  <div className="grid md:grid-cols-2 gap-4">
-                    <input
-                      type="text"
-                      placeholder="City"
-                      value={formData.address.city}
-                      onChange={(e) =>
-                        setFormData({
-                          ...formData,
-                          address: {
-                            ...formData.address,
-                            city: e.target.value,
-                          },
-                        })
-                      }
-                      className="w-full px-4 py-3 border rounded-lg focus:ring-2 focus:ring-blue-500"
-                    />
-
-                    <input
-                      type="text"
-                      placeholder="State"
-                      value={formData.address.state}
-                      onChange={(e) =>
-                        setFormData({
-                          ...formData,
-                          address: {
-                            ...formData.address,
-                            state: e.target.value,
-                          },
-                        })
-                      }
-                      className="w-full px-4 py-3 border rounded-lg focus:ring-2 focus:ring-blue-500"
-                    />
-                  </div>
-
-                  <div className="grid md:grid-cols-2 gap-4">
-                    <input
-                      type="text"
-                      placeholder="PIN Code"
-                      maxLength={6}
-                      value={formData.address.pin}
-                      onChange={(e) =>
-                        setFormData({
-                          ...formData,
-                          address: {
-                            ...formData.address,
-                            pin: e.target.value,
-                          },
-                        })
-                      }
-                      className="w-full px-4 py-3 border rounded-lg focus:ring-2 focus:ring-blue-500"
-                    />
-
-                    <input
-                      type="text"
-                      placeholder="Landmark"
-                      value={formData.address.landmark}
-                      onChange={(e) =>
-                        setFormData({
-                          ...formData,
-                          address: {
-                            ...formData.address,
-                            landmark: e.target.value,
-                          },
-                        })
-                      }
-                      className="w-full px-4 py-3 border rounded-lg focus:ring-2 focus:ring-blue-500"
-                    />
-                  </div>
-                </div>
-              </div>
-
-              <div className="flex justify-end pt-6 border-t">
-                <button
-                  type="submit"
-                  disabled={loading}
-                  className="px-8 py-3 bg-gradient-to-r from-blue-500 to-purple-500 text-white rounded-lg font-semibold flex items-center gap-2 disabled:opacity-50"
-                >
-                  {loading && <Loader2 className="w-5 h-5 animate-spin" />}
-                  Save Changes
-                </button>
-              </div>
-            </form>
           </div>
         </div>
       </div>

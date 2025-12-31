@@ -181,9 +181,9 @@ function CheckoutContent() {
     <div className="min-h-screen bg-gradient-to-b from-blue-50 via-white to-purple-50 overflow-x-hidden">
       <Navbar />
       <div className="bg-gradient-to-b from-blue-50 to-white">
-        <div className="max-w-7xl mx-auto px-1 py-8 md:py-12">
+        <div className="max-w-7xl mx-auto px-0 lg:px-4 py-8 md:py-12">
           {/* Progress Bar */}
-          <div className="mb-8 md:mb-12 px-2">
+          <div className="mb-8 md:mb-12 px-4 lg:px-0">
             <div className="flex items-center justify-between max-w-3xl mx-auto">
               {steps.map((step, index) => (
                 <div key={index} className="flex items-center flex-1">
@@ -221,207 +221,213 @@ function CheckoutContent() {
             </div>
           </div>
 
-          <h1 className="text-4xl font-bold text-gray-900 mb-8">Checkout</h1>
+          <h1 className="text-2xl md:text-4xl font-bold text-gray-900 mb-6 md:mb-8 px-4 lg:px-0">Checkout</h1>
 
-          <div className="grid lg:grid-cols-3 gap-8">
-            <div className="lg:col-span-2">
-              <div className="bg-white rounded-xl p-8 shadow-md px-0">
-                <h2 className="text-2xl font-bold text-gray-900 mb-6">Shipping Information</h2>
+          <div className="grid lg:grid-cols-3 gap-6 lg:gap-8">
+            <div className="lg:col-span-2 space-y-6 px-0 lg:px-0">
+              <div className="bg-white rounded-xl shadow-md mx-4 lg:mx-0">
+                <div className="p-4 md:p-6 lg:p-8">
+                  <h2 className="text-xl md:text-2xl font-bold text-gray-900 mb-6">Shipping Information</h2>
 
-                <div className="space-y-6">
-                  <div>
-                    <label className="block text-sm font-medium text-gray-700 mb-2">
-                      Full Name *
-                    </label>
-                    <div className="relative">
-                      <User className="absolute left-3 top-1/2 -translate-y-1/2 w-5 h-5 text-gray-400" />
-                      <input
-                        type="text"
-                        value={formData.fullName}
-                        onChange={(e) => setFormData({ ...formData, fullName: e.target.value })}
-                        className="w-full pl-10 pr-4 py-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-blue-500 focus:border-transparent"
-                        required
-                      />
-                    </div>
-                  </div>
-
-                  <div>
-                    <label className="block text-sm font-medium text-gray-700 mb-2">
-                      Phone Number *
-                    </label>
-                    <div className="relative">
-                      <Phone className="absolute left-3 top-1/2 -translate-y-1/2 w-5 h-5 text-gray-400" />
-                      <input
-                        type="tel"
-                        value={formData.phone}
-                        onChange={(e) => setFormData({ ...formData, phone: e.target.value })}
-                        className="w-full pl-10 pr-4 py-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-blue-500 focus:border-transparent"
-                        required
-                      />
-                    </div>
-                  </div>
-
-                  <div>
-                    <label className="block text-sm font-medium text-gray-700 mb-2">
-                      Address *
-                    </label>
-                    <div className="relative">
-                      <MapPin className="absolute left-3 top-4 w-5 h-5 text-gray-400" />
-                      <textarea
-                        value={formData.address}
-                        onChange={(e) => setFormData({ ...formData, address: e.target.value })}
-                        className="w-full pl-10 pr-4 py-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-blue-500 focus:border-transparent"
-                        rows={3}
-                        required
-                      />
-                    </div>
-                  </div>
-
-                  <div className="grid md:grid-cols-2 gap-4">
+                  <div className="space-y-5 md:space-y-6">
                     <div>
                       <label className="block text-sm font-medium text-gray-700 mb-2">
-                        Landmark
+                        Full Name *
                       </label>
-                      <input
-                        type="text"
-                        value={formData.landmark}
-                        onChange={(e) => setFormData({ ...formData, landmark: e.target.value })}
-                        className="w-full px-4 py-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-blue-500 focus:border-transparent"
-                      />
+                      <div className="relative">
+                        <User className="absolute left-3 top-1/2 -translate-y-1/2 w-5 h-5 text-gray-400" />
+                        <input
+                          type="text"
+                          value={formData.fullName}
+                          onChange={(e) => setFormData({ ...formData, fullName: e.target.value })}
+                          className="w-full pl-10 pr-4 py-2.5 md:py-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-blue-500 focus:border-transparent text-sm md:text-base"
+                          required
+                        />
+                      </div>
                     </div>
 
                     <div>
                       <label className="block text-sm font-medium text-gray-700 mb-2">
-                        PIN Code *
+                        Phone Number *
                       </label>
-                      <input
-                        type="text"
-                        value={formData.pin}
-                        onChange={(e) => setFormData({ ...formData, pin: e.target.value })}
-                        className="w-full px-4 py-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-blue-500 focus:border-transparent"
-                        maxLength={6}
-                        required
-                      />
+                      <div className="relative">
+                        <Phone className="absolute left-3 top-1/2 -translate-y-1/2 w-5 h-5 text-gray-400" />
+                        <input
+                          type="tel"
+                          value={formData.phone}
+                          onChange={(e) => setFormData({ ...formData, phone: e.target.value })}
+                          className="w-full pl-10 pr-4 py-2.5 md:py-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-blue-500 focus:border-transparent text-sm md:text-base"
+                          required
+                        />
+                      </div>
+                    </div>
+
+                    <div>
+                      <label className="block text-sm font-medium text-gray-700 mb-2">
+                        Address *
+                      </label>
+                      <div className="relative">
+                        <MapPin className="absolute left-3 top-3 md:top-4 w-5 h-5 text-gray-400" />
+                        <textarea
+                          value={formData.address}
+                          onChange={(e) => setFormData({ ...formData, address: e.target.value })}
+                          className="w-full pl-10 pr-4 py-2.5 md:py-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-blue-500 focus:border-transparent text-sm md:text-base resize-none"
+                          rows={3}
+                          required
+                        />
+                      </div>
+                    </div>
+
+                    <div className="grid grid-cols-2 gap-3 md:gap-4">
+                      <div>
+                        <label className="block text-sm font-medium text-gray-700 mb-2">
+                          Landmark
+                        </label>
+                        <input
+                          type="text"
+                          value={formData.landmark}
+                          onChange={(e) => setFormData({ ...formData, landmark: e.target.value })}
+                          className="w-full px-3 md:px-4 py-2.5 md:py-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-blue-500 focus:border-transparent text-sm md:text-base"
+                        />
+                      </div>
+
+                      <div>
+                        <label className="block text-sm font-medium text-gray-700 mb-2">
+                          PIN Code *
+                        </label>
+                        <input
+                          type="text"
+                          value={formData.pin}
+                          onChange={(e) => setFormData({ ...formData, pin: e.target.value })}
+                          className="w-full px-3 md:px-4 py-2.5 md:py-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-blue-500 focus:border-transparent text-sm md:text-base"
+                          maxLength={6}
+                          required
+                        />
+                      </div>
                     </div>
                   </div>
                 </div>
               </div>
 
-              <div className="bg-white rounded-xl p-8 shadow-md mt-6 px-0">
-                <h2 className="text-2xl font-bold text-gray-900 mb-4">Payment Method</h2>
-                <div className="space-y-3">
-                  <div
-                    onClick={() => setPaymentMethod('online')}
-                    className={`flex items-center space-x-3 p-4 border-2 rounded-lg cursor-pointer transition ${
-                      paymentMethod === 'online'
-                        ? 'border-blue-500 bg-blue-50'
-                        : 'border-gray-200 hover:border-blue-300'
-                    }`}
-                  >
-                    <input
-                      type="radio"
-                      checked={paymentMethod === 'online'}
-                      onChange={() => setPaymentMethod('online')}
-                      className="w-5 h-5"
-                    />
-                    <CreditCard className="w-5 h-5 text-blue-600" />
-                    <div>
-                      <p className="font-semibold text-gray-900">Pay Online (Recommended)</p>
-                      <p className="text-sm text-gray-600">UPI, Cards, Wallets, NetBanking</p>
+              <div className="bg-white rounded-xl shadow-md mx-4 lg:mx-0">
+                <div className="p-4 md:p-6 lg:p-8">
+                  <h2 className="text-xl md:text-2xl font-bold text-gray-900 mb-4">Payment Method</h2>
+                  <div className="space-y-3">
+                    <div
+                      onClick={() => setPaymentMethod('online')}
+                      className={`flex items-center space-x-3 p-3 md:p-4 border-2 rounded-lg cursor-pointer transition ${
+                        paymentMethod === 'online'
+                          ? 'border-blue-500 bg-blue-50'
+                          : 'border-gray-200 hover:border-blue-300'
+                      }`}
+                    >
+                      <input
+                        type="radio"
+                        checked={paymentMethod === 'online'}
+                        onChange={() => setPaymentMethod('online')}
+                        className="w-4 h-4 md:w-5 md:h-5 flex-shrink-0"
+                      />
+                      <CreditCard className="w-5 h-5 text-blue-600 flex-shrink-0" />
+                      <div className="min-w-0">
+                        <p className="font-semibold text-gray-900 text-sm md:text-base">Pay Online (Recommended)</p>
+                        <p className="text-xs md:text-sm text-gray-600">UPI, Cards, Wallets, NetBanking</p>
+                      </div>
                     </div>
-                  </div>
 
-                  <div
-                    onClick={() => setPaymentMethod('cod')}
-                    className={`flex items-center space-x-3 p-4 border-2 rounded-lg cursor-pointer transition ${
-                      paymentMethod === 'cod'
-                        ? 'border-blue-500 bg-blue-50'
-                        : 'border-gray-200 hover:border-blue-300'
-                    }`}
-                  >
-                    <input
-                      type="radio"
-                      checked={paymentMethod === 'cod'}
-                      onChange={() => setPaymentMethod('cod')}
-                      className="w-5 h-5"
-                    />
-                    <div>
-                      <p className="font-semibold text-gray-900">Cash on Delivery</p>
-                      <p className="text-sm text-gray-600">Pay when you receive (₹50 extra charge)</p>
+                    <div
+                      onClick={() => setPaymentMethod('cod')}
+                      className={`flex items-center space-x-3 p-3 md:p-4 border-2 rounded-lg cursor-pointer transition ${
+                        paymentMethod === 'cod'
+                          ? 'border-blue-500 bg-blue-50'
+                          : 'border-gray-200 hover:border-blue-300'
+                      }`}
+                    >
+                      <input
+                        type="radio"
+                        checked={paymentMethod === 'cod'}
+                        onChange={() => setPaymentMethod('cod')}
+                        className="w-4 h-4 md:w-5 md:h-5 flex-shrink-0"
+                      />
+                      <div className="min-w-0">
+                        <p className="font-semibold text-gray-900 text-sm md:text-base">Cash on Delivery</p>
+                        <p className="text-xs md:text-sm text-gray-600">Pay when you receive (₹50 extra charge)</p>
+                      </div>
                     </div>
                   </div>
                 </div>
               </div>
             </div>
 
-            <div className="lg:col-span-1 px-0">
-              <div className="bg-white rounded-xl p-6 shadow-md sticky top-20">
-                <h2 className="text-2xl font-bold text-gray-900 mb-6">Order Summary</h2>
+            <div className="lg:col-span-1 px-0 lg:px-0">
+              <div className="bg-white rounded-xl shadow-md sticky top-20 mx-4 lg:mx-0">
+                <div className="p-4 md:p-6">
+                  <h2 className="text-xl md:text-2xl font-bold text-gray-900 mb-4 md:mb-6">Order Summary</h2>
 
-                <div className="space-y-4 mb-6">
-                  {cart.map(item => (
-                    <div key={item.productId} className="flex items-center gap-4 pb-4 border-b border-gray-100 last:border-0">
-                      <div className="relative w-20 h-20 bg-gray-100 rounded-lg flex-shrink-0 overflow-hidden">
-                        <Image
-                          src={item.image || '/images/product-placeholder.jpg'}
-                          alt={item.name}
-                          fill
-                          className="object-cover"
-                        />
+                  <div className="space-y-3 md:space-y-4 mb-4 md:mb-6">
+                    {cart.map(item => (
+                      <div key={item.productId} className="flex items-center gap-3 md:gap-4 pb-3 md:pb-4 border-b border-gray-100 last:border-0">
+                        <div className="relative w-16 h-16 md:w-20 md:h-20 bg-gray-100 rounded-lg flex-shrink-0 overflow-hidden">
+                          <Image
+                            src={item.image || '/images/product-placeholder.jpg'}
+                            alt={item.name}
+                            fill
+                            className="object-cover"
+                          />
+                        </div>
+                        
+                        <div className="flex-1 min-w-0">
+                          <h3 className="text-xs md:text-sm font-medium text-gray-900 line-clamp-2">
+                            {item.name}
+                          </h3>
+                          <p className="text-xs text-gray-500 mt-1">
+                            Qty: {item.qty}
+                          </p>
+                          <p className="text-sm md:text-base font-semibold text-gray-900 mt-1">
+                            ₹{(item.price * item.qty).toLocaleString()}
+                          </p>
+                        </div>
                       </div>
-                      
-                      <div className="flex-1 min-w-0">
-                        <h3 className="text-sm font-medium text-gray-900 truncate">
-                          {item.name}
-                        </h3>
-                        <p className="text-xs text-gray-500 mt-1">
-                          Qty: {item.qty}
-                        </p>
-                        <p className="text-sm font-semibold text-gray-900 mt-1">
-                          ₹{(item.price * item.qty).toLocaleString()}
-                        </p>
+                    ))}
+                  </div>
+
+                  <div className="border-t pt-3 md:pt-4 space-y-2 mb-4 md:mb-6">
+                    <div className="flex justify-between text-sm md:text-base text-gray-600">
+                      <span>Subtotal</span>
+                      <span>₹{subtotal.toLocaleString()}</span>
+                    </div>
+                    <div className="flex justify-between text-sm md:text-base text-gray-600">
+                      <span>Shipping</span>
+                      <span className="text-green-600 font-semibold">Free</span>
+                    </div>
+                    {paymentMethod === 'cod' && (
+                      <div className="flex justify-between text-sm md:text-base text-gray-600">
+                        <span>COD Charges</span>
+                        <span className="text-orange-600">₹{codCharges}</span>
+                      </div>
+                    )}
+                    <div className="border-t pt-3 mt-3">
+                      <div className="flex justify-between text-lg md:text-xl font-bold text-gray-900">
+                        <span>Total</span>
+                        <span>₹{total.toLocaleString()}</span>
                       </div>
                     </div>
-                  ))}
-                </div>
+                  </div>
 
-                <div className="border-t pt-4 space-y-2 mb-6">
-                  <div className="flex justify-between text-gray-600">
-                    <span>Subtotal</span>
-                    <span>₹{subtotal.toLocaleString()}</span>
-                  </div>
-                  <div className="flex justify-between text-gray-600">
-                    <span>Shipping</span>
-                    <span className="text-green-600 font-semibold">Free</span>
-                  </div>
-                  {paymentMethod === 'cod' && (
-                    <div className="flex justify-between text-gray-600">
-                      <span>COD Charges</span>
-                      <span className="text-orange-600">₹{codCharges}</span>
-                    </div>
-                  )}
-                  <div className="border-t pt-3 mt-3">
-                    <div className="flex justify-between text-xl font-bold text-gray-900">
-                      <span>Total</span>
-                      <span>₹{total.toLocaleString()}</span>
-                    </div>
-                  </div>
+                  <button
+                    onClick={handlePayment}
+                    disabled={loading}
+                    className="w-full py-2.5 md:py-3 bg-gradient-to-r from-blue-500 to-purple-500 text-white rounded-lg font-semibold hover:shadow-lg transition disabled:opacity-50 disabled:cursor-not-allowed flex items-center justify-center space-x-2 text-sm md:text-base"
+                  >
+                    {loading ? (
+                      <>
+                        <Loader2 className="w-4 h-4 md:w-5 md:h-5 animate-spin" />
+                        <span>Processing...</span>
+                      </>
+                    ) : (
+                      <span>{paymentMethod === 'cod' ? 'Place Order' : 'Pay Now'}</span>
+                    )}
+                  </button>
                 </div>
-
-                <button
-                  onClick={handlePayment}
-                  disabled={loading}
-                  className="w-full py-3 bg-gradient-to-r from-blue-500 to-purple-500 text-white rounded-lg font-semibold hover:shadow-lg transition disabled:opacity-50 disabled:cursor-not-allowed flex items-center justify-center space-x-2"
-                >
-                  {loading ? (
-                    <>
-                      <Loader2 className="w-5 h-5 animate-spin" />
-                      <span>Processing...</span>
-                    </>
-                  ) : (
-                    <span>{paymentMethod === 'cod' ? 'Place Order' : 'Pay Now'}</span>
-                  )}
-                </button>
               </div>
             </div>
           </div>
