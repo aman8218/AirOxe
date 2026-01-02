@@ -24,8 +24,8 @@ export const metadata = {
   ],
 icons: {
     icon: [
-      { url: '/images/AirOxeLogo.png', sizes: '64x64', type: 'image/png' },
-      { url: '/icons/favicon-16x16.png', sizes: '16x16', type: 'image/png' },
+      { url: '/images/logo.png', sizes: '512x512', type: 'image/png' },
+      { url: '/icons/favicon-16x16a.png', sizes: '512x512', type: 'image/png' },
       { url: '/icons/favicon-32x32.png', sizes: '32x32', type: 'image/png' },
     ],
     apple: '/icons/apple-touch-icon.png',
